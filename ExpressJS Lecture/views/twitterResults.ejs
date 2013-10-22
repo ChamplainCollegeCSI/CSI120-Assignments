@@ -1,0 +1,16 @@
+<html>
+<head></head>
+<body>
+  <h5><%= text %></h5>
+  <h6>Score: <%= sentimentScore %></h6>
+<ul>
+     <% for(var i=0; i<locations.length; i++) { %>
+        <li>
+            <a href='#' class="locations[i]">
+                <%= locations[i] %>
+            </a>
+        </li>
+    <% } %>
+</ul>
+</body>
+</html>

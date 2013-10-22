@@ -1,0 +1,62 @@
+<html>
+    
+    <head>
+        <script type="text/javascript">
+            function updateTextInput(val) {
+                document.getElementById('rangeVal').value = val;
+            }
+        </script>
+        <style>
+        fieldset > div {
+            padding: 10px 0;
+            border: 1px dashed #ccc;
+        }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Hello Form!</h1>
+        <form action="/formPost" method="post"  >
+            <fieldset>
+                <div>
+                    <input type=email placeholder="email" name="email">
+                </div>
+                <div>
+                    <input type=text placeholder="hashtag(s)" name="hashtags">
+                </div>
+                <div>
+                    <input type="radio" name=apiToUse value="twitter">
+                    <label>Twitter</label>
+                    <input type="radio" name=apiToUse value="facebook">
+                    <label>Facebook</label>
+                    <input type="radio" name=apiToUse value="tumblr">
+                    <label>Tumblr</label>
+                </div>
+                <div>
+                    <label>How many results per request?</label><br/>
+                    <input type=range placeholder="hashtag(s)" min=0 max=10 name=numResults onchange="updateTextInput(this.value);" value="0">
+                    <input id="rangeVal" type=number value=0 disabled>
+                </div>
+                <div>
+                    <input type="checkbox" name=location value="eu">
+                    <label>EU</label>
+                    <input type="checkbox" name=location value="am">
+                    <label>Americas</label>
+                    <input type="checkbox" name=location value="sa">
+                    <label>South Africa</label>
+                </div>
+                <div>
+                    <label>Limit results to this date only:</label><br/>
+                    <input type="date" name="dateOfContent"  value="2013-10-22">
+                </div>
+                    <div>
+                        <textarea name="area" rows="10" ></textarea>
+                    </div>
+                    <div>
+                    <input type=submit  >
+                </div>
+            </fieldset>
+        </form>
+    </body>
+
+</html>
